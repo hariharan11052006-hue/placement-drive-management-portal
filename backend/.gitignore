@@ -1,0 +1,7 @@
+node_modules/
+.env
+data/*.json
+!data/drives.json
+!data/users.json
+!data/registrations.json
+!data/students.json

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "email": "admin@placement.com",
+    "password": "$2b$10$w/hHK3OydFLVV17awhOtdeH9/kmF.UIextGWM2hEZrdlVy6V.4jYO",
+    "role": "admin"
+  },
+  {
+    "id": "2",
+    "email": "student@placement.com",
+    "password": "$2b$10$6FuqQKRhPi7OMeSoY8wtjez5KDYk7iNamwXyj3/sJ8JazEnZyrWY6",
+    "role": "student"
+  },
+  {
+    "id": "1789016733317",
+    "email": "test@placement.com",
+    "password": "$2b$10$f.0aU5IeG2oIaQ.ZwH73VeU.4uxQ1ku2Bj4tZxOAT8T4xIi3v85qi",
+    "role": "student"
+  },
+  {
+    "id": "1789019347628",
+    "email": "hariharan11052006@gmail.com",
+    "password": "$2b$10$TLelYPP2J6SNVwPs73jmM.ibcaBuLHU.ac3R3VMJGK63kN/kdwQ0m",
+    "role": "student"
+  },
+  {
+    "id": "1789021231423",
+    "email": "kishore9153@mountzion.ac.in",
+    "password": "$2b$10$h8HdU6zTtr5aXKOciGs/tO6CUCJ5Sbg5K8H76x0iqX8XccHoK4Pdq",
+    "role": "student"
+  },
+  {
+    "id": "877cf857-1877-41e6-a3c7-dfddc5c21012",
+    "email": "karaikidz@gmail.com",
+    "password": "$2b$10$6dSR..NyuLg0m8HUHm1GgeqWE2Ed/mcp6NzYiIcQd9HpCp8JLLnda",
+    "role": "student"
+  }
+]

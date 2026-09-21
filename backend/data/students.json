@@ -1,0 +1,561 @@
+[
+  {
+    "id": "2",
+    "name": "John Doe",
+    "registerNumber": "REG2025001",
+    "email": "student@placement.com",
+    "phone": "9876543210",
+    "college": "National Institute of Technology",
+    "department": "Computer Science",
+    "graduationYear": 2025,
+    "cgpa": 7.8,
+    "backlogs": 1,
+    "skills": [
+      "Java",
+      "Python",
+      "SQL"
+    ],
+    "resume": "resume_john.pdf",
+    "profileCompletion": 95,
+    "tenthPercentage": 85.5,
+    "twelfthPercentage": 88,
+    "programmingLanguages": [
+      "Java",
+      "Python"
+    ],
+    "certifications": [
+      "AWS Certified Cloud Practitioner"
+    ],
+    "projects": [
+      "E-commerce Website",
+      "Chat Application"
+    ],
+    "internships": [
+      "Intern at Tech Corp"
+    ],
+    "createdAt": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "3",
+    "name": "Alice Johnson",
+    "registerNumber": "REG2025002",
+    "email": "alice.johnson@college.edu",
+    "phone": "9876543211",
+    "college": "Indian Institute of Technology",
+    "department": "Computer Science",
+    "graduationYear": 2025,
+    "cgpa": 8.5,
+    "backlogs": 0,
+    "skills": [
+      "Python",
+      "Machine Learning",
+      "SQL"
+    ],
+    "resume": "resume_alice.pdf",
+    "profileCompletion": 100,
+    "tenthPercentage": 92,
+    "twelfthPercentage": 94.5,
+    "programmingLanguages": [
+      "Python",
+      "R"
+    ],
+    "certifications": [
+      "Google Data Analytics"
+    ],
+    "projects": [
+      "ML Prediction Model",
+      "Data Visualization Dashboard"
+    ],
+    "internships": [
+      "Data Scientist Intern at XYZ"
+    ],
+    "createdAt": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "4",
+    "name": "Bob Smith",
+    "registerNumber": "REG2025003",
+    "email": "bob.smith@college.edu",
+    "phone": "9876543212",
+    "college": "SRM Institute of Science and Technology",
+    "department": "Electronics",
+    "graduationYear": 2025,
+    "cgpa": 7.2,
+    "backlogs": 1,
+    "skills": [
+      "C",
+      "Embedded Systems",
+      "Python"
+    ],
+    "resume": "resume_bob.pdf",
+    "profileCompletion": 85,
+    "tenthPercentage": 80,
+    "twelfthPercentage": 82.5,
+    "programmingLanguages": [
+      "C",
+      "Python"
+    ],
+    "certifications": [
+      "Cisco CCNA"
+    ],
+    "projects": [
+      "IoT Home Automation"
+    ],
+    "internships": [
+      "Hardware Engineer Intern"
+    ],
+    "createdAt": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "5",
+    "name": "Charlie Brown",
+    "registerNumber": "REG2025004",
+    "email": "charlie.brown@college.edu",
+    "phone": "9876543213",
+    "college": "Manipal Institute of Technology",
+    "department": "Information Technology",
+    "graduationYear": 2025,
+    "cgpa": 6.9,
+    "backlogs": 2,
+    "skills": [
+      "JavaScript",
+      "React",
+      "Node.js"
+    ],
+    "resume": "resume_charlie.pdf",
+    "profileCompletion": 80,
+    "tenthPercentage": 75,
+    "twelfthPercentage": 78,
+    "programmingLanguages": [
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
+    "certifications": [
+      "Meta Front-End Developer"
+    ],
+    "projects": [
+      "Social Media App",
+      "Task Manager"
+    ],
+    "internships": [
+      "Web Developer Intern"
+    ],
+    "createdAt": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "6",
+    "name": "Diana Prince",
+    "registerNumber": "REG2025005",
+    "email": "diana.prince@college.edu",
+    "phone": "9876543214",
+    "college": "Jadavpur University",
+    "department": "MBA",
+    "graduationYear": 2024,
+    "cgpa": 8,
+    "backlogs": 0,
+    "skills": [
+      "Marketing",
+      "Analytics",
+      "Communication"
+    ],
+    "resume": "resume_diana.pdf",
+    "profileCompletion": 90,
+    "tenthPercentage": 88,
+    "twelfthPercentage": 90,
+    "programmingLanguages": [
+      "Python"
+    ],
+    "certifications": [
+      "Google Analytics"
+    ],
+    "projects": [
+      "Market Analysis Report"
+    ],
+    "internships": [
+      "Marketing Intern at ABC"
+    ],
+    "createdAt": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "7",
+    "name": "Eve Davis",
+    "registerNumber": "REG2025006",
+    "email": "eve.davis@college.edu",
+    "phone": "9876543215",
+    "college": "VIT University",
+    "department": "Computer Science",
+    "graduationYear": 2025,
+    "cgpa": 7.5,
+    "backlogs": 1,
+    "skills": [
+      "Java",
+      "Spring",
+      "SQL"
+    ],
+    "resume": "resume_eve.pdf",
+    "profileCompletion": 88,
+    "tenthPercentage": 82,
+    "twelfthPercentage": 85,
+    "programmingLanguages": [
+      "Java",
+      "C++"
+    ],
+    "certifications": [
+      "Oracle Certified Associate"
+    ],
+    "projects": [
+      "Banking System",
+      "Inventory Management"
+    ],
+    "internships": [
+      "Software Intern"
+    ],
+    "createdAt": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "8",
+    "name": "Frank Wilson",
+    "registerNumber": "REG2025007",
+    "email": "frank.wilson@college.edu",
+    "phone": "9876543216",
+    "college": "Thapar University",
+    "department": "Electrical Engineering",
+    "graduationYear": 2025,
+    "cgpa": 7,
+    "backlogs": 2,
+    "skills": [
+      "MATLAB",
+      "Simulink",
+      "Python"
+    ],
+    "resume": "resume_frank.pdf",
+    "profileCompletion": 75,
+    "tenthPercentage": 78,
+    "twelfthPercentage": 80,
+    "programmingLanguages": [
+      "Python",
+      "MATLAB"
+    ],
+    "certifications": [
+      "IEEE Student Member"
+    ],
+    "projects": [
+      "Power System Analysis"
+    ],
+    "internships": [
+      "Electrical Engineer Intern"
+    ],
+    "createdAt": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "9",
+    "name": "Grace Lee",
+    "registerNumber": "REG2025008",
+    "email": "grace.lee@college.edu",
+    "phone": "9876543217",
+    "college": "PSG College of Technology",
+    "department": "Computer Science",
+    "graduationYear": 2025,
+    "cgpa": 8.2,
+    "backlogs": 0,
+    "skills": [
+      "Python",
+      "Django",
+      "PostgreSQL"
+    ],
+    "resume": "resume_grace.pdf",
+    "profileCompletion": 92,
+    "tenthPercentage": 90,
+    "twelfthPercentage": 92,
+    "programmingLanguages": [
+      "Python",
+      "JavaScript"
+    ],
+    "certifications": [
+      "AWS Solutions Architect"
+    ],
+    "projects": [
+      "Blog Platform",
+      "E-learning System"
+    ],
+    "internships": [
+      "Backend Developer Intern"
+    ],
+    "createdAt": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "10",
+    "name": "Henry Taylor",
+    "registerNumber": "REG2025009",
+    "email": "henry.taylor@college.edu",
+    "phone": "9876543218",
+    "college": "NIT Trichy",
+    "department": "Mechanical Engineering",
+    "graduationYear": 2025,
+    "cgpa": 7.3,
+    "backlogs": 1,
+    "skills": [
+      "AutoCAD",
+      "SolidWorks",
+      "Python"
+    ],
+    "resume": "resume_henry.pdf",
+    "profileCompletion": 78,
+    "tenthPercentage": 80,
+    "twelfthPercentage": 83,
+    "programmingLanguages": [
+      "Python",
+      "C"
+    ],
+    "certifications": [
+      "Autodesk Certified"
+    ],
+    "projects": [
+      "CAD Design Project"
+    ],
+    "internships": [
+      "Design Engineer Intern"
+    ],
+    "createdAt": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "11",
+    "name": "Ivy Clark",
+    "registerNumber": "REG2025010",
+    "email": "ivy.clark@college.edu",
+    "phone": "9876543219",
+    "college": "BITS Pilani",
+    "department": "Computer Science",
+    "graduationYear": 2025,
+    "cgpa": 8.8,
+    "backlogs": 0,
+    "skills": [
+      "C++",
+      "Algorithms",
+      "Machine Learning"
+    ],
+    "resume": "resume_ivy.pdf",
+    "profileCompletion": 98,
+    "tenthPercentage": 95,
+    "twelfthPercentage": 96,
+    "programmingLanguages": [
+      "C++",
+      "Python"
+    ],
+    "certifications": [
+      "Microsoft Certified"
+    ],
+    "projects": [
+      "AI Chatbot",
+      "Recommendation System"
+    ],
+    "internships": [
+      "AI Research Intern"
+    ],
+    "createdAt": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "12",
+    "name": "Jack Robinson",
+    "registerNumber": "REG2025011",
+    "email": "jack.robinson@college.edu",
+    "phone": "9876543220",
+    "college": "IIIT Hyderabad",
+    "department": "Information Technology",
+    "graduationYear": 2025,
+    "cgpa": 7.6,
+    "backlogs": 1,
+    "skills": [
+      "React",
+      "Node.js",
+      "MongoDB"
+    ],
+    "resume": "resume_jack.pdf",
+    "profileCompletion": 86,
+    "tenthPercentage": 83,
+    "twelfthPercentage": 85,
+    "programmingLanguages": [
+      "JavaScript",
+      "TypeScript"
+    ],
+    "certifications": [
+      "React Native"
+    ],
+    "projects": [
+      "Mobile App",
+      "Full Stack App"
+    ],
+    "internships": [
+      "Frontend Developer Intern"
+    ],
+    "createdAt": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "13",
+    "name": "Karen White",
+    "registerNumber": "REG2025012",
+    "email": "karen.white@college.edu",
+    "phone": "9876543221",
+    "college": "Delhi Technological University",
+    "department": "Electronics",
+    "graduationYear": 2025,
+    "cgpa": 6.8,
+    "backlogs": 2,
+    "skills": [
+      "VLSI",
+      "Verilog",
+      "Python"
+    ],
+    "resume": "resume_karen.pdf",
+    "profileCompletion": 72,
+    "tenthPercentage": 76,
+    "twelfthPercentage": 79,
+    "programmingLanguages": [
+      "Verilog",
+      "Python"
+    ],
+    "certifications": [
+      "VLSI Design"
+    ],
+    "projects": [
+      "VLSI Chip Design"
+    ],
+    "internships": [
+      "VLSI Design Intern"
+    ],
+    "createdAt": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "14",
+    "name": "Leo Martin",
+    "registerNumber": "REG2025013",
+    "email": "leo.martin@college.edu",
+    "phone": "9876543222",
+    "college": "COEP Pune",
+    "department": "Computer Science",
+    "graduationYear": 2024,
+    "cgpa": 7.1,
+    "backlogs": 2,
+    "skills": [
+      "Java",
+      "Spring Boot",
+      "MySQL"
+    ],
+    "resume": "resume_leo.pdf",
+    "profileCompletion": 84,
+    "tenthPercentage": 81,
+    "twelfthPercentage": 84,
+    "programmingLanguages": [
+      "Java",
+      "Python"
+    ],
+    "certifications": [
+      "Spring Professional"
+    ],
+    "projects": [
+      "Banking Application",
+      "Library System"
+    ],
+    "internships": [
+      "Java Developer Intern"
+    ],
+    "createdAt": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "15",
+    "name": "Mia Taylor",
+    "registerNumber": "REG2025014",
+    "email": "mia.taylor@college.edu",
+    "phone": "9876543223",
+    "college": "PES University",
+    "department": "Computer Science",
+    "graduationYear": 2025,
+    "cgpa": 8,
+    "backlogs": 0,
+    "skills": [
+      "Python",
+      "Data Science",
+      "SQL"
+    ],
+    "resume": "resume_mia.pdf",
+    "profileCompletion": 90,
+    "tenthPercentage": 87,
+    "twelfthPercentage": 89,
+    "programmingLanguages": [
+      "Python",
+      "R"
+    ],
+    "certifications": [
+      "Data Science Certification"
+    ],
+    "projects": [
+      "Data Pipeline",
+      "Analytics Dashboard"
+    ],
+    "internships": [
+      "Data Science Intern"
+    ],
+    "createdAt": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "1789021231423",
+    "name": "kishore",
+    "email": "kishore9153@mountzion.ac.in",
+    "registerNumber": "REG1789021231425",
+    "department": "Computer Science",
+    "graduationYear": 2025,
+    "cgpa": 7.3,
+    "backlogs": 0,
+    "skills": [
+      "C++",
+      "Java",
+      "Data Structures",
+      "Algorithms",
+      "SQL",
+      "Excel",
+      "Power BI",
+      "Python"
+    ],
+    "profileCompletion": 100,
+    "phone": "9994387144",
+    "tenthPercentage": "60",
+    "twelfthPercentage": "81.3",
+    "programmingLanguages": [
+      "java",
+      "html"
+    ],
+    "projects": [
+      "sports coaching session",
+      "e-commerce shopping system"
+    ],
+    "internships": [
+      "cyberthulir"
+    ],
+    "college": "mountzion "
+  },
+  {
+    "id": "877cf857-1877-41e6-a3c7-dfddc5c21012",
+    "name": "hariharan",
+    "registerNumber": "911723104036",
+    "email": "karaikidz@gmail.com",
+    "phone": "9994387144",
+    "college": "",
+    "department": "Computer Science",
+    "graduationYear": 2027,
+    "cgpa": 6,
+    "backlogs": 5,
+    "tenthPercentage": 60,
+    "twelfthPercentage": 58.7,
+    "skills": [
+      "C++",
+      "Java",
+      "Data Structures",
+      "Algorithms"
+    ],
+    "resume": "",
+    "profileCompletion": 85,
+    "createdAt": "2026-09-17T04:08:12.014Z",
+    "updatedAt": "2026-09-17T04:09:43.842Z"
+  }
+]

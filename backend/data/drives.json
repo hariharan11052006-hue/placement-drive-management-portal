@@ -1,0 +1,399 @@
+[
+  {
+    "id": "1",
+    "company": "TCS",
+    "role": "Software Engineer",
+    "description": "Developing enterprise software solutions for global clients. Work on cutting-edge technologies in cloud, AI, and automation.",
+    "location": "Bangalore, India",
+    "driveDate": "2026-10-15",
+    "deadline": "2026-09-30",
+    "salary": "600000 INR",
+    "stipend": "N/A",
+    "workMode": "On-site",
+    "jobType": "Full-time",
+    "skills": [
+      "C++",
+      "Java",
+      "Data Structures",
+      "Algorithms"
+    ],
+    "minCgpa": 7,
+    "maxBacklogs": 2,
+    "eligibleDepartments": [
+      "Computer Science",
+      "Information Technology"
+    ],
+    "graduationYear": 2025,
+    "openings": 10,
+    "maxApplicants": 150,
+    "genderEligibility": "Any",
+    "interviewLocation": "Bangalore",
+    "recruitmentProcess": [
+      "Aptitude Test",
+      "Technical Test",
+      "Coding Test",
+      "Technical Interview",
+      "HR Interview"
+    ],
+    "status": "published",
+    "createdAt": "2026-09-01T00:00:00.000Z",
+    "updatedAt": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "2",
+    "company": "Infosys",
+    "role": "Data Analyst",
+    "description": "Analyze large datasets to derive business insights. Work with BI tools and statistical models.",
+    "location": "Hyderabad, India",
+    "driveDate": "2026-11-01",
+    "deadline": "2026-10-10",
+    "salary": "550000 INR",
+    "stipend": "N/A",
+    "workMode": "Hybrid",
+    "jobType": "Full-time",
+    "skills": [
+      "SQL",
+      "Excel",
+      "Power BI",
+      "Python"
+    ],
+    "minCgpa": 6.5,
+    "maxBacklogs": 3,
+    "eligibleDepartments": [
+      "Computer Science",
+      "Electronics",
+      "Statistics"
+    ],
+    "graduationYear": 2025,
+    "openings": 8,
+    "maxApplicants": 100,
+    "genderEligibility": "Any",
+    "interviewLocation": "Hyderabad",
+    "recruitmentProcess": [
+      "Aptitude Test",
+      "Technical Test",
+      "HR Interview"
+    ],
+    "status": "published",
+    "createdAt": "2026-09-05T00:00:00.000Z",
+    "updatedAt": "2026-09-05T00:00:00.000Z"
+  },
+  {
+    "id": "3",
+    "company": "Accenture",
+    "role": "Consultant",
+    "description": "Provide consulting services to clients across industries. Solve complex business problems.",
+    "location": "Delhi, India",
+    "driveDate": "2026-10-20",
+    "deadline": "2026-10-05",
+    "salary": "700000 INR",
+    "stipend": "N/A",
+    "workMode": "Hybrid",
+    "jobType": "Full-time",
+    "skills": [
+      "Communication",
+      "Problem Solving",
+      "Domain Knowledge",
+      "Leadership"
+    ],
+    "minCgpa": 7.5,
+    "maxBacklogs": 1,
+    "eligibleDepartments": [
+      "MBA",
+      "Computer Science",
+      "Commerce"
+    ],
+    "graduationYear": 2024,
+    "openings": 5,
+    "maxApplicants": 80,
+    "genderEligibility": "Any",
+    "interviewLocation": "Delhi",
+    "recruitmentProcess": [
+      "Aptitude Test",
+      "Group Discussion",
+      "Technical Interview",
+      "HR Interview"
+    ],
+    "status": "published",
+    "createdAt": "2026-09-10T00:00:00.000Z",
+    "updatedAt": "2026-09-10T00:00:00.000Z"
+  },
+  {
+    "id": "4",
+    "company": "Cognizant",
+    "role": "Software Developer",
+    "description": "Build scalable applications and services. Collaborate with cross-functional teams.",
+    "location": "Chennai, India",
+    "driveDate": "2026-10-25",
+    "deadline": "2026-10-15",
+    "salary": "580000 INR",
+    "stipend": "N/A",
+    "workMode": "On-site",
+    "jobType": "Full-time",
+    "skills": [
+      "Java",
+      "Spring",
+      "SQL",
+      "JavaScript"
+    ],
+    "minCgpa": 6.8,
+    "maxBacklogs": 2,
+    "eligibleDepartments": [
+      "Computer Science",
+      "Information Technology"
+    ],
+    "graduationYear": 2025,
+    "openings": 12,
+    "maxApplicants": 200,
+    "genderEligibility": "Any",
+    "interviewLocation": "Chennai",
+    "recruitmentProcess": [
+      "Aptitude Test",
+      "Coding Test",
+      "Technical Interview",
+      "HR Interview"
+    ],
+    "status": "published",
+    "createdAt": "2026-09-12T00:00:00.000Z",
+    "updatedAt": "2026-09-12T00:00:00.000Z"
+  },
+  {
+    "id": "5",
+    "company": "Wipro",
+    "role": "Data Scientist",
+    "description": "Apply machine learning and AI to solve real-world problems. Work on predictive analytics.",
+    "location": "Bangalore, India",
+    "driveDate": "2026-11-05",
+    "deadline": "2026-10-20",
+    "salary": "650000 INR",
+    "stipend": "N/A",
+    "workMode": "Remote",
+    "jobType": "Full-time",
+    "skills": [
+      "Python",
+      "Machine Learning",
+      "TensorFlow",
+      "Statistics"
+    ],
+    "minCgpa": 7.2,
+    "maxBacklogs": 2,
+    "eligibleDepartments": [
+      "Computer Science",
+      "Electronics",
+      "Mathematics"
+    ],
+    "graduationYear": 2025,
+    "openings": 6,
+    "maxApplicants": 90,
+    "genderEligibility": "Any",
+    "interviewLocation": "Bangalore",
+    "recruitmentProcess": [
+      "Aptitude Test",
+      "Technical Test",
+      "Coding Test",
+      "Technical Interview"
+    ],
+    "status": "published",
+    "createdAt": "2026-09-15T00:00:00.000Z",
+    "updatedAt": "2026-09-15T00:00:00.000Z"
+  },
+  {
+    "id": "6",
+    "company": "Capgemini",
+    "role": "Business Analyst",
+    "description": "Bridge the gap between business and technology. Analyze processes and recommend solutions.",
+    "location": "Pune, India",
+    "driveDate": "2026-10-18",
+    "deadline": "2026-10-08",
+    "salary": "520000 INR",
+    "stipend": "N/A",
+    "workMode": "Hybrid",
+    "jobType": "Full-time",
+    "skills": [
+      "Analytics",
+      "Communication",
+      "SQL",
+      "Excel"
+    ],
+    "minCgpa": 6.5,
+    "maxBacklogs": 3,
+    "eligibleDepartments": [
+      "MBA",
+      "Commerce",
+      "Computer Science"
+    ],
+    "graduationYear": 2024,
+    "openings": 7,
+    "maxApplicants": 110,
+    "genderEligibility": "Any",
+    "interviewLocation": "Pune",
+    "recruitmentProcess": [
+      "Aptitude Test",
+      "Case Study",
+      "Technical Interview",
+      "HR Interview"
+    ],
+    "status": "published",
+    "createdAt": "2026-09-18T00:00:00.000Z",
+    "updatedAt": "2026-09-18T00:00:00.000Z"
+  },
+  {
+    "id": "7",
+    "company": "Zoho",
+    "role": "Full Stack Developer",
+    "description": "Develop end-to-end web applications using modern frameworks. Collaborate with product teams.",
+    "location": "Chennai, India",
+    "driveDate": "2026-11-10",
+    "deadline": "2026-10-25",
+    "salary": "620000 INR",
+    "stipend": "N/A",
+    "workMode": "On-site",
+    "jobType": "Full-time",
+    "skills": [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "JavaScript"
+    ],
+    "minCgpa": 7,
+    "maxBacklogs": 2,
+    "eligibleDepartments": [
+      "Computer Science",
+      "Information Technology"
+    ],
+    "graduationYear": 2025,
+    "openings": 9,
+    "maxApplicants": 120,
+    "genderEligibility": "Any",
+    "interviewLocation": "Chennai",
+    "recruitmentProcess": [
+      "Aptitude Test",
+      "Coding Test",
+      "Technical Interview",
+      "HR Interview"
+    ],
+    "status": "published",
+    "createdAt": "2026-09-20T00:00:00.000Z",
+    "updatedAt": "2026-09-20T00:00:00.000Z"
+  },
+  {
+    "id": "8",
+    "company": "HCLTech",
+    "role": "Cloud Engineer",
+    "description": "Design and manage cloud infrastructure. Work with AWS, Azure, and Kubernetes.",
+    "location": "Noida, India",
+    "driveDate": "2026-11-12",
+    "deadline": "2026-10-28",
+    "salary": "630000 INR",
+    "stipend": "N/A",
+    "workMode": "Hybrid",
+    "jobType": "Full-time",
+    "skills": [
+      "AWS",
+      "Docker",
+      "Kubernetes",
+      "Linux"
+    ],
+    "minCgpa": 7,
+    "maxBacklogs": 2,
+    "eligibleDepartments": [
+      "Computer Science",
+      "Information Technology"
+    ],
+    "graduationYear": 2025,
+    "openings": 6,
+    "maxApplicants": 80,
+    "genderEligibility": "Any",
+    "interviewLocation": "Noida",
+    "recruitmentProcess": [
+      "Aptitude Test",
+      "Technical Test",
+      "Coding Test",
+      "Technical Interview"
+    ],
+    "status": "published",
+    "createdAt": "2026-09-22T00:00:00.000Z",
+    "updatedAt": "2026-09-22T00:00:00.000Z"
+  },
+  {
+    "id": "9",
+    "company": "Tech Mahindra",
+    "role": "Network Engineer",
+    "description": "Manage and optimize network infrastructure. Ensure secure and reliable connectivity.",
+    "location": "Pune, India",
+    "driveDate": "2026-10-22",
+    "deadline": "2026-10-12",
+    "salary": "550000 INR",
+    "stipend": "N/A",
+    "workMode": "On-site",
+    "jobType": "Full-time",
+    "skills": [
+      "Networking",
+      "Cisco",
+      "TCP/IP",
+      "Firewall"
+    ],
+    "minCgpa": 6.8,
+    "maxBacklogs": 2,
+    "eligibleDepartments": [
+      "Electronics",
+      "Computer Science",
+      "Information Technology"
+    ],
+    "graduationYear": 2025,
+    "openings": 5,
+    "maxApplicants": 70,
+    "genderEligibility": "Any",
+    "interviewLocation": "Pune",
+    "recruitmentProcess": [
+      "Aptitude Test",
+      "Technical Test",
+      "Technical Interview",
+      "HR Interview"
+    ],
+    "status": "published",
+    "createdAt": "2026-09-24T00:00:00.000Z",
+    "updatedAt": "2026-09-24T00:00:00.000Z"
+  },
+  {
+    "id": "10",
+    "company": "Freshworks",
+    "role": "SaaS Support Engineer",
+    "description": "Provide technical support and solutions for SaaS products. Work with customers globally.",
+    "location": "Chennai, India",
+    "driveDate": "2026-11-08",
+    "deadline": "2026-10-22",
+    "salary": "480000 INR",
+    "stipend": "N/A",
+    "workMode": "Hybrid",
+    "jobType": "Full-time",
+    "skills": [
+      "Communication",
+      "Problem Solving",
+      "Customer Service",
+      "HTML",
+      "CSS"
+    ],
+    "minCgpa": 6,
+    "maxBacklogs": 3,
+    "eligibleDepartments": [
+      "Computer Science",
+      "Commerce",
+      "MBA"
+    ],
+    "graduationYear": 2024,
+    "openings": 10,
+    "maxApplicants": 130,
+    "genderEligibility": "Any",
+    "interviewLocation": "Chennai",
+    "recruitmentProcess": [
+      "Aptitude Test",
+      "Group Discussion",
+      "Technical Interview",
+      "HR Interview"
+    ],
+    "status": "published",
+    "createdAt": "2026-09-26T00:00:00.000Z",
+    "updatedAt": "2026-09-26T00:00:00.000Z"
+  }
+]
