@@ -22,7 +22,7 @@ const getByStatus = async (status) => {
 
 const create = async (drive) => {
   const result = await pool.query(
-    `INSERT INTO drives (id, company, company_id, role, description, location, drive_date, deadline, salary, stipend, work_mode, job_type, skills, min_cgpa, max_backlogs, eligible_departments, graduation_year, openings, max_applicants, gender_eligibility, interview_location, recruitment_process, status, created_at, updated_at)
+    `INSERT INTO drives (id, company, company_id, "role", description, location, drive_date, deadline, salary, stipend, work_mode, job_type, skills, min_cgpa, max_backlogs, eligible_departments, graduation_year, openings, max_applicants, gender_eligibility, interview_location, recruitment_process, status, created_at, updated_at)
      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25) RETURNING *`,
     [
       drive.id, drive.company, drive.companyId, drive.role, drive.description, drive.location,
@@ -38,7 +38,7 @@ const create = async (drive) => {
 const update = async (id, updates) => {
   const keys = Object.keys(updates);
   if (keys.length === 0) return null;
-  const setClause = keys.map((k, i) => `${k} = $${i + 2}`).join(', ');
+  const setClause = keys.map((k, i) => `"${k}" = $${i + 2}`).join(', ');
   const values = Object.values(updates);
   const result = await pool.query(
     `UPDATE drives SET ${setClause}, updated_at = CURRENT_TIMESTAMP WHERE id = $1 RETURNING *`,

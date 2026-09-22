@@ -21,7 +21,7 @@ async function runMigrations() {
         id VARCHAR PRIMARY KEY,
         email VARCHAR(255) UNIQUE NOT NULL,
         password VARCHAR(255) NOT NULL,
-        role VARCHAR(20) NOT NULL DEFAULT 'student',
+        "role" VARCHAR(20) NOT NULL DEFAULT 'student',
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       );
     `);
@@ -55,7 +55,7 @@ async function runMigrations() {
         id VARCHAR PRIMARY KEY,
         company VARCHAR(255) NOT NULL,
         company_id VARCHAR REFERENCES companies(id),
-        role VARCHAR(255) NOT NULL,
+        "role" VARCHAR(255) NOT NULL,
         description TEXT,
         location VARCHAR(255),
         drive_date DATE,
@@ -122,11 +122,11 @@ async function runMigrations() {
         id VARCHAR PRIMARY KEY,
         user_id VARCHAR REFERENCES users(id),
         recipient VARCHAR(255),
-        type VARCHAR(50),
+        "type" VARCHAR(50),
         title VARCHAR(255),
         message TEXT,
         drive_id VARCHAR REFERENCES drives(id),
-        read BOOLEAN DEFAULT false,
+        "read" BOOLEAN DEFAULT false,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       );
     `);
@@ -136,9 +136,9 @@ async function runMigrations() {
         id VARCHAR PRIMARY KEY,
         drive_id VARCHAR REFERENCES drives(id),
         round VARCHAR(50),
-        type VARCHAR(50),
-        date DATE,
-        time VARCHAR(50),
+        "type" VARCHAR(50),
+        "date" DATE,
+        "time" VARCHAR(50),
         location VARCHAR(255),
         duration VARCHAR(50),
         notes TEXT,
@@ -149,11 +149,11 @@ async function runMigrations() {
     await client.query(`
       CREATE TABLE IF NOT EXISTS activity_log (
         id VARCHAR PRIMARY KEY,
-        date VARCHAR(20),
-        time VARCHAR(20),
+        "date" VARCHAR(20),
+        "time" VARCHAR(20),
         action VARCHAR(100),
-        user VARCHAR(255),
-        role VARCHAR(50),
+        "user" VARCHAR(255),
+        "role" VARCHAR(50),
         details TEXT,
         ip VARCHAR(50),
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -184,7 +184,7 @@ async function runMigrations() {
     if (users.length > 0) {
       for (const u of users) {
         await client.query(`
-          INSERT INTO users (id, email, password, role, created_at)
+          INSERT INTO users (id, email, password, "role", created_at)
           VALUES ($1, $2, $3, $4, $5)
           ON CONFLICT (id) DO NOTHING
         `, [u.id, u.email, u.password, u.role, u.createdAt || new Date()]);
@@ -198,9 +198,9 @@ async function runMigrations() {
       for (const d of drives) {
         const companyId = companies.find(c => c.name === d.company)?.id || null;
         await client.query(`
-          INSERT INTO drives (id, company, company_id, role, description, location, drive_date, deadline, salary, stipend, work_mode, job_type, skills, min_cgpa, max_backlogs, eligible_departments, graduation_year, openings, max_applicants, gender_eligibility, interview_location, recruitment_process, status, created_at, updated_at)
-          VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25)
-          ON CONFLICT (id) DO UPDATE SET company = EXCLUDED.company, role = EXCLUDED.role, status = EXCLUDED.status
+          INSERT INTO drives (id, company, company_id, "role", description, location, drive_date, deadline, salary, stipend, work_mode, job_type, skills, min_cgpa, max_backlogs, eligible_departments, graduation_year, openings, max_applicants, gender_eligibility, interview_location, recruitment_process, status, created_at, updated_at)
+           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25)
+           ON CONFLICT (id) DO UPDATE SET company = EXCLUDED.company, "role" = EXCLUDED."role", status = EXCLUDED.status
         `, [
           d.id, d.company, companyId, d.role, d.description, d.location, d.driveDate, d.deadline,
           d.salary, d.stipend, d.workMode, d.jobType, d.skills, d.minCgpa, d.maxBacklogs,
@@ -246,9 +246,9 @@ async function runMigrations() {
     if (notifications.length > 0) {
       for (const n of notifications) {
         await client.query(`
-          INSERT INTO notifications (id, user_id, recipient, type, title, message, drive_id, read, created_at)
-          VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
-          ON CONFLICT (id) DO NOTHING
+          INSERT INTO notifications (id, user_id, recipient, "type", title, message, drive_id, "read", created_at)
+           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+           ON CONFLICT (id) DO NOTHING
         `, [n.id, n.userId, n.recipient, n.type, n.title, n.message, n.driveId, n.read, n.createdAt]);
       }
       console.log(`Inserted ${notifications.length} notifications.`);
@@ -259,7 +259,7 @@ async function runMigrations() {
     if (schedules.length > 0) {
       for (const s of schedules) {
         await client.query(`
-          INSERT INTO schedules (id, drive_id, round, type, date, time, location, duration, notes, created_at)
+          INSERT INTO schedules (id, drive_id, round, "type", "date", "time", location, duration, notes, created_at)
           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
           ON CONFLICT (id) DO NOTHING
         `, [s.id, s.driveId, s.round, s.type, s.date, s.time, s.location, s.duration, s.notes, s.createdAt]);
@@ -272,7 +272,7 @@ async function runMigrations() {
     if (activityLogs.length > 0) {
       for (const a of activityLogs) {
         await client.query(`
-          INSERT INTO activity_log (id, date, time, action, user, role, details, ip, created_at)
+          INSERT INTO activity_log (id, "date", "time", action, "user", "role", details, ip, created_at)
           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
           ON CONFLICT (id) DO NOTHING
         `, [a.id, a.date, a.time, a.action, a.user, a.role, a.details, a.ip, a.createdAt]);

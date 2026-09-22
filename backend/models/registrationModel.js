@@ -2,7 +2,7 @@ const pool = require('../db/pool');
 
 const getAll = async () => {
   const result = await pool.query(`
-    SELECT r.*, s.name as student_name, s.register_number, d.company, d.role as drive_role
+    SELECT r.*, s.name as student_name, s.register_number, d.company, d."role" as drive_role
     FROM registrations r
     LEFT JOIN students s ON r.student_id = s.id
     LEFT JOIN drives d ON r.drive_id = d.id
@@ -13,7 +13,7 @@ const getAll = async () => {
 
 const getById = async (id) => {
   const result = await pool.query(
-    `SELECT r.*, s.name as student_name, s.register_number, d.company, d.role as drive_role
+    `SELECT r.*, s.name as student_name, s.register_number, d.company, d."role" as drive_role
      FROM registrations r
      LEFT JOIN students s ON r.student_id = s.id
      LEFT JOIN drives d ON r.drive_id = d.id
@@ -25,7 +25,7 @@ const getById = async (id) => {
 
 const getByStudentId = async (studentId) => {
   const result = await pool.query(
-    `SELECT r.*, d.company, d.role as drive_role, d.status as drive_status
+    `SELECT r.*, d.company, d."role" as drive_role, d.status as drive_status
      FROM registrations r
      LEFT JOIN drives d ON r.drive_id = d.id
      WHERE r.student_id = $1 ORDER BY r.registered_at DESC`,

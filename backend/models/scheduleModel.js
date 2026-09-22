@@ -11,13 +11,13 @@ const getById = async (id) => {
 };
 
 const getByDriveId = async (driveId) => {
-  const result = await pool.query('SELECT * FROM schedules WHERE drive_id = $1 ORDER BY date, time', [driveId]);
+  const result = await pool.query('SELECT * FROM schedules WHERE drive_id = $1 ORDER BY "date", "time"', [driveId]);
   return result.rows;
 };
 
 const create = async (schedule) => {
   const result = await pool.query(
-    `INSERT INTO schedules (id, drive_id, round, type, date, time, location, duration, notes, created_at)
+    `INSERT INTO schedules (id, drive_id, round, "type", "date", "time", location, duration, notes, created_at)
      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *`,
     [schedule.id, schedule.driveId, schedule.round, schedule.type, schedule.date, schedule.time, schedule.location, schedule.duration, schedule.notes || '', schedule.createdAt || new Date()]
   );

@@ -16,13 +16,13 @@ const getByUserId = async (userId) => {
 };
 
 const getUnreadByUserId = async (userId) => {
-  const result = await pool.query('SELECT * FROM notifications WHERE (user_id = $1 OR recipient = $1) AND read = false ORDER BY created_at DESC', [userId]);
+  const result = await pool.query('SELECT * FROM notifications WHERE (user_id = $1 OR recipient = $1) AND "read" = false ORDER BY created_at DESC', [userId]);
   return result.rows;
 };
 
 const create = async (notification) => {
   const result = await pool.query(
-    `INSERT INTO notifications (id, user_id, recipient, type, title, message, drive_id, read, created_at)
+    `INSERT INTO notifications (id, user_id, recipient, "type", title, message, drive_id, "read", created_at)
      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *`,
     [notification.id, notification.userId, notification.recipient, notification.type, notification.title, notification.message, notification.driveId, notification.read || false, notification.createdAt || new Date()]
   );
@@ -32,7 +32,7 @@ const create = async (notification) => {
 const update = async (id, updates) => {
   const keys = Object.keys(updates);
   if (keys.length === 0) return null;
-  const setClause = keys.map((k, i) => `${k} = $${i + 2}`).join(', ');
+  const setClause = keys.map((k, i) => `"${k}" = $${i + 2}`).join(', ');
   const values = Object.values(updates);
   const result = await pool.query(
     `UPDATE notifications SET ${setClause} WHERE id = $1 RETURNING *`,
@@ -43,14 +43,14 @@ const update = async (id, updates) => {
 
 const markAllAsReadByUserId = async (userId) => {
   const result = await pool.query(
-    `UPDATE notifications SET read = true WHERE user_id = $1 OR recipient = $1 AND read = false RETURNING *`,
+    `UPDATE notifications SET "read" = true WHERE (user_id = $1 OR recipient = $1) AND "read" = false RETURNING *`,
     [userId]
   );
   return result.rowCount;
 };
 
 const markAsReadById = async (id) => {
-  const result = await pool.query('UPDATE notifications SET read = true WHERE id = $1 RETURNING *', [id]);
+  const result = await pool.query('UPDATE notifications SET "read" = true WHERE id = $1 RETURNING *', [id]);
   return result.rows[0] || null;
 };
 
