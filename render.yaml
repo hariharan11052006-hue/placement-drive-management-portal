@@ -1,0 +1,47 @@
+services:
+  - type: web
+    name: placement-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: DATABASE_URL
+        fromDatabase:
+          name: placement-db
+          property: connectionString
+      - key: JWT_SECRET
+        value: ${{ secrets.JWT_SECRET }}
+      - key: CORS_ORIGIN
+        value: https://placement-drive-management-portal.onrender.com
+      - key: FRONTEND_URL
+        value: https://placement-drive-management-portal.onrender.com
+      - key: MIGRATE_ON_START
+        value: "true"
+    plans:
+      - name: starter
+        cpu: 0.25
+        memory: 512MB
+    healthCheckPath: /api/health
+
+  - type: web
+    name: placement-frontend
+    env: static
+    buildCommand: npm run build
+    publishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://placement-drive-management-portal.onrender.com/api
+    plans:
+      - name: starter
+        cpu: 0.25
+        memory: 512MB
+
+databases:
+  - name: placement-db
+    databaseName: placement_drive
+    user: placement_user
+    plan: starter
