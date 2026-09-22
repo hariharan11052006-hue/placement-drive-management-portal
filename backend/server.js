@@ -848,9 +848,8 @@ async function requireSelfOrAdmin(req, res, next) {
   return res.status(403).json({ message: 'Access denied' });
 }
 
-(async () => {
-  await repairCompanyIds();
-  app.listen(PORT, () => {
-    console.log(`Backend running on http://localhost:${PORT}`);
-  });
-})();
+// Start server
+repairCompanyIds().catch(err => console.error('Repair startup failed:', err.message));
+app.listen(PORT, () => {
+  console.log(`Backend running on http://localhost:${PORT}`);
+});
