@@ -20,7 +20,7 @@ services:
       - key: FRONTEND_URL
         value: https://placement-drive-management-portal.onrender.com
       - key: MIGRATE_ON_START
-        value: "true"
+        value: "false"
     plans:
       - name: starter
         cpu: 0.25
