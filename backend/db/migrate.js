@@ -196,7 +196,7 @@ async function runMigrations() {
     const drives = await readJSON('drives.json');
     if (drives.length > 0) {
       for (const d of drives) {
-        const companyId = companies.find(c => c.name === d.company)?.id || null;
+         const companyId = companies.find(c => c.name.trim() === d.company.trim())?.id || null;
         await client.query(`
           INSERT INTO drives (id, company, company_id, "role", description, location, drive_date, deadline, salary, stipend, work_mode, job_type, skills, min_cgpa, max_backlogs, eligible_departments, graduation_year, openings, max_applicants, gender_eligibility, interview_location, recruitment_process, status, created_at, updated_at)
            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25)
@@ -282,7 +282,7 @@ async function runMigrations() {
 
     // Repair company_id for all existing drives
     for (const d of drives) {
-      const companyId = companies.find(c => c.name === d.company)?.id || null;
+      const companyId = companies.find(c => c.name.trim().toLowerCase() === d.company.trim().toLowerCase())?.id || null;
       if (companyId) {
         await client.query(`UPDATE drives SET "company_id" = $1 WHERE id = $2`, [companyId, d.id]);
       }

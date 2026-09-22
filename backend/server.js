@@ -27,19 +27,15 @@ if (process.env.MIGRATE_ON_START === 'true') {
 
 async function repairCompanyIds() {
   try {
-    const companies = await pool.query('SELECT id, name FROM companies');
-    const drives = await pool.query('SELECT id, company, "company_id" FROM drives');
-    const companyMap = {};
-    for (const c of companies.rows) { companyMap[c.name] = c.id; }
-    let repaired = 0;
-    for (const d of drives.rows) {
-      const expectedId = companyMap[d.company];
-      if (expectedId && d.company_id !== expectedId) {
-        await pool.query('UPDATE drives SET "company_id" = $1 WHERE id = $2', [expectedId, d.id]);
-        repaired++;
+    const result = await pool.query(
+      `UPDATE drives SET "company_id" = c.id FROM companies c WHERE TRIM(drives.company) = TRIM(c.name) AND drives.company_id IS DISTINCT FROM c.id RETURNING drives.id, drives.company, drives."company_id", c.id as matched_company_id`
+    );
+    console.log('company_id repair completed: ' + result.rows.length + ' drives updated.');
+    if (result.rows.length > 0) {
+      for (const r of result.rows.slice(0, 5)) {
+        console.log('  ' + r.company + ' -> ' + r.matched_company_id);
       }
     }
-    console.log('company_id repair completed: ' + repaired + ' drives updated.');
   } catch (err) {
     console.error('company_id repair failed:', err.message);
   }
