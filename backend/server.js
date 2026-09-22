@@ -24,6 +24,24 @@ if (process.env.MIGRATE_ON_START === 'true') {
   }
 }
 
+async function repairCompanyIds() {
+  try {
+    const companies = await getAll('companies.json');
+    const drives = await getAll('drives.json');
+    const companyMap = {};
+    for (const c of companies) { companyMap[c.name] = c.id; }
+    for (const d of drives) {
+      const expectedId = companyMap[d.company];
+      if (expectedId && d.company_id !== expectedId) {
+        await update('drives.json', d.id, { companyId: expectedId });
+      }
+    }
+    console.log('company_id repair completed.');
+  } catch (err) {
+    console.error('company_id repair failed:', err.message);
+  }
+}
+
 const PORT = process.env.PORT || 5000;
 const JWT_SECRET = config.jwtSecret;
 const FRONTEND_URLS = (process.env.FRONTEND_URL || 'http://localhost:3000').split(',').map(s => s.trim()).filter(Boolean);
@@ -830,7 +848,9 @@ async function requireSelfOrAdmin(req, res, next) {
   return res.status(403).json({ message: 'Access denied' });
 }
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`Backend running on http://localhost:${PORT}`);
-});
+(async () => {
+  await repairCompanyIds();
+  app.listen(PORT, () => {
+    console.log(`Backend running on http://localhost:${PORT}`);
+  });
+})();
