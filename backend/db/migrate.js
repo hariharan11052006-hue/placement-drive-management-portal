@@ -200,13 +200,13 @@ async function runMigrations() {
         await client.query(`
           INSERT INTO drives (id, company, company_id, "role", description, location, drive_date, deadline, salary, stipend, work_mode, job_type, skills, min_cgpa, max_backlogs, eligible_departments, graduation_year, openings, max_applicants, gender_eligibility, interview_location, recruitment_process, status, created_at, updated_at)
            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25)
-           ON CONFLICT (id) DO UPDATE SET company = EXCLUDED.company, "role" = EXCLUDED."role", company_id = EXCLUDED.company_id, status = EXCLUDED.status
-        `, [
-          d.id, d.company, companyId, d.role, d.description, d.location, d.driveDate, d.deadline,
-          d.salary, d.stipend, d.workMode, d.jobType, d.skills, d.minCgpa, d.maxBacklogs,
-          d.eligibleDepartments, d.graduationYear, d.openings, d.maxApplicants, d.genderEligibility,
-          d.interviewLocation, d.recruitmentProcess, d.status, d.createdAt, d.updatedAt
-        ]);
+           ON CONFLICT (id) DO UPDATE SET company = EXCLUDED.company, "role" = EXCLUDED."role", "company_id" = EXCLUDED."company_id", status = EXCLUDED.status
+         `, [
+           d.id, d.company, companyId, d.role, d.description, d.location, d.driveDate, d.deadline,
+           d.salary, d.stipend, d.workMode, d.jobType, d.skills, d.minCgpa, d.maxBacklogs,
+           d.eligibleDepartments, d.graduationYear, d.openings, d.maxApplicants, d.genderEligibility,
+           d.interviewLocation, d.recruitmentProcess, d.status, d.createdAt, d.updatedAt
+         ]);
       }
       console.log(`Inserted ${drives.length} drives.`);
     }
@@ -279,6 +279,15 @@ async function runMigrations() {
       }
       console.log(`Inserted ${activityLogs.length} activity logs.`);
     }
+
+    // Repair company_id for all existing drives
+    for (const d of drives) {
+      const companyId = companies.find(c => c.name === d.company)?.id || null;
+      if (companyId) {
+        await client.query(`UPDATE drives SET "company_id" = $1 WHERE id = $2`, [companyId, d.id]);
+      }
+    }
+    console.log(`Repaired company_id for ${drives.length} drives.`);
 
     await client.query('COMMIT');
     console.log('Migration completed successfully!');
