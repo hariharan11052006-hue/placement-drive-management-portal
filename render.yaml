@@ -1,6 +1,7 @@
 services:
   - type: web
     name: placement-backend
+    rootDir: backend
     env: node
     buildCommand: npm install
     startCommand: npm start
@@ -29,6 +30,7 @@ services:
 
   - type: web
     name: placement-frontend
+    rootDir: frontend
     env: static
     buildCommand: npm run build
     publishPath: dist
