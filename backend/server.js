@@ -236,7 +236,7 @@ app.post('/api/auth/login', loginRateLimit, async (req, res) => {
     if (!user) return res.status(400).json({ message: 'Invalid credentials' });
     const valid = await bcrypt.compare(String(password), user.password);
     if (!valid) return res.status(400).json({ message: 'Invalid credentials' });
-    const accessToken = jwt.sign({ id: user.id, email: user.email, roles: [user.role] }, JWT_SECRET, { expiresIn: '1h' });
+    const accessToken = jwt.sign({ id: user.id, email: user.email, role: user.role, roles: [user.role] }, JWT_SECRET, { expiresIn: '1h' });
     await addActivityLog('LOGIN', user, 'User logged in successfully', req);
     res.json({ accessToken, user: sanitizeUser(user) });
   } catch (error) { res.status(500).json({ message: 'Server error' }); }
