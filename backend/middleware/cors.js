@@ -1,9 +1,16 @@
 const cors = require('cors');
 const config = require('../config');
 
+const parseOrigins = (value) =>
+  String(value || '')
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean);
+
 const corsOptions = {
   origin: (origin, callback) => {
-    if (!origin || origin === config.corsOrigin || origin === config.frontendUrl) {
+    const allowedOrigins = [...parseOrigins(config.corsOrigin), ...parseOrigins(config.frontendUrl)];
+    if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
