@@ -1,30 +1,23 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import api, { getErrorMessage } from '../services/api'
-import { Plus, Eye, Pencil, Copy, Trash2, Search, Upload, XCircle, ChevronDown, Briefcase } from 'lucide-react'
+import { Plus, Eye, Pencil, Copy, Trash2, Search, Upload, XCircle, Briefcase } from 'lucide-react'
 import { PageHeader, Button, Field, Input, Select, StatusBadge, LoadingState, ErrorState, NoResults, EmptyState, Modal } from '../components/ui'
 import CompanyLogo from '../components/CompanyLogo'
 import { formatDate } from '../utils/driveUtils'
 
 function ActionMenu({ drive, onDuplicate, onStatus, onDelete }) {
-  const [open, setOpen] = useState(false)
   const isPub = String(drive.status).toLowerCase() === 'published'
+  const iconBtn = 'btnx btnx-secondary btnx-sm !px-2'
   return (
-    <div className="relative" onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) setOpen(false) }}>
-      <button onClick={() => setOpen(v => !v)} className="btnx btnx-secondary btnx-sm" aria-haspopup="menu" aria-expanded={open}>
-        Actions <ChevronDown size={14} />
-      </button>
-      {open && (
-        <div className="anim-pop absolute right-0 mt-1.5 w-48 surface p-1.5 z-20" role="menu">
-          <Link to={`/admin/drives/${drive.id}`} className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm hover:bg-slate-100" onClick={() => setOpen(false)}><Eye size={15} /> View</Link>
-          <Link to={`/admin/drives/${drive.id}/edit`} className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm hover:bg-slate-100" onClick={() => setOpen(false)}><Pencil size={15} /> Edit</Link>
-          <button onClick={() => { setOpen(false); onDuplicate(drive.id) }} className="w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm hover:bg-slate-100"><Copy size={15} /> Duplicate</button>
-          {!isPub
-            ? <button onClick={() => { setOpen(false); onStatus(drive.id, 'published') }} className="w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-green-700 hover:bg-green-50"><Upload size={15} /> Publish</button>
-            : <button onClick={() => { setOpen(false); onStatus(drive.id, 'closed') }} className="w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-amber-700 hover:bg-amber-50"><XCircle size={15} /> Close</button>}
-          <button onClick={() => { setOpen(false); onDelete(drive.id) }} className="w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-red-700 hover:bg-red-50"><Trash2 size={15} /> Delete</button>
-        </div>
-      )}
+    <div className="actions-cell">
+      <Link to={`/admin/drives/${drive.id}`} title="View details" aria-label="View details" className={iconBtn}><Eye size={15} /></Link>
+      <Link to={`/admin/drives/${drive.id}/edit`} title="Edit drive" aria-label="Edit drive" className={iconBtn}><Pencil size={15} /></Link>
+      <button type="button" title="Duplicate as draft" aria-label="Duplicate as draft" onClick={() => onDuplicate(drive.id)} className={iconBtn}><Copy size={15} /></button>
+      {!isPub
+        ? <button type="button" title="Publish drive" aria-label="Publish drive" onClick={() => onStatus(drive.id, 'published')} className="btnx btnx-sm !px-2 text-green-700 border border-green-200 bg-white hover:bg-green-50"><Upload size={15} /></button>
+        : <button type="button" title="Close drive" aria-label="Close drive" onClick={() => onStatus(drive.id, 'closed')} className="btnx btnx-sm !px-2 text-amber-700 border border-amber-200 bg-white hover:bg-amber-50"><XCircle size={15} /></button>}
+      <button type="button" title="Delete drive" aria-label="Delete drive" onClick={() => onDelete(drive.id)} className="btnx btnx-danger btnx-sm !px-2"><Trash2 size={15} /></button>
     </div>
   )
 }
@@ -127,13 +120,13 @@ export default function AdminDriveList() {
       ) : (
         <div className="table-shell">
           <div className="table-scroll">
-            <table className="tablex tablex-fixed" style={{ minWidth: 760 }}>
+            <table className="tablex tablex-fixed" style={{ minWidth: 830 }}>
               <colgroup>
                 <col />
                 <col style={{ width: 130 }} />
                 <col style={{ width: 130 }} />
                 <col style={{ width: 120 }} />
-                <col style={{ width: 120 }} />
+                <col style={{ width: 200 }} />
               </colgroup>
               <thead><tr><th>Company</th><th>Package</th><th>Deadline</th><th>Status</th><th style={{ textAlign: 'right' }}>Actions</th></tr></thead>
               <tbody>
